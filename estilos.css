@@ -1,0 +1,83 @@
+
+*{
+    font-family: "Helvetica HelveticaNeueLTS Td", Helvetica;
+}
+
+@font-face {
+    font-family: "Helvetica Neue LTS Td";
+    src: url("C:\Users\Javier\AppData\Local\Microsoft\Windows\Fonts\HelveticaNeueLTStdTh.otf");
+}
+
+
+
+body{
+    background-image: 'New-york.jpg';
+    background-attachment: fixed;
+}
+
+
+#app{
+    padding-top: 40px;
+    padding-right: 40px;
+    width: 980px;
+    align-self: center;
+    background-color: white;
+    padding-bottom: 40px;
+}
+
+#app>div>ul{
+    list-style: none;
+}
+
+center{
+    margin-top: 80px;
+}
+
+.completo{
+    padding-top: 10px;
+    padding-bottom: 0%;
+    background-color: #008000ad;
+    border-color: gray;
+    border-radius: 4px;
+    height: 80px;
+    width: 800px;
+    color: white;
+    text-align: center;
+    transition: box-shadow .3s;
+}
+
+.completo>p{
+    text-decoration: line-through;
+}
+
+.completo:hover{
+    box-shadow: 0 0 10px #181818;
+}
+
+.incompleto{
+    padding-top: 10px;
+    padding-bottom: 0%;
+    background-color: #ff0000a2;
+    text-align: center;
+    border-color: gray;
+    border-radius: 4px;
+    height: 80px;
+    width: 800px;
+    color: white;
+    transition: box-shadow .3s;
+}
+
+.incompleto:hover{
+    box-shadow: 0 0 11px rgba(33,33,33,.2); 
+}
+
+#marcar{
+    border-style: none;
+    border: hidden;
+    border-radius: 20px;
+    background-color: white;
+}
+
+button {
+    border-style: none;
+}

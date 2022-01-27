@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Proyecto Lista Tareas</title>
+    <script src="https://unpkg.com/vue@next"></script>
+    <script src="index.js"></script>
+    <link rel="stylesheet" href="estilos.css">
+</head>
+
+<body background="BG_SF.jpg">
+    <center>
+        <div id="app">
+            <h1>Lista de tareas</h1>
+    
+            <input type="text" v-model="nombre" v-on:keyup.enter="agregar">
+            <div>
+                <ul v-for="(tarea, index) in listatareas" :key="index">
+                    <li>
+                         <div v-bind:class="{completo: tarea.estado, incompleto: !tarea.estado}">
+                            <p>Tarea {{ tarea.nombre }} &nbsp;&nbsp;&nbsp; Completada: {{ tarea.estado }} &nbsp;&nbsp;&nbsp; Prioridad: {{ tarea.prioridadname }} &nbsp;&nbsp;&nbsp; Fecha: {{ tarea.fecha }}</p>
+                            &nbsp; &nbsp;<button id="marcar" v-on:click="completar(index)">&check;</button> &nbsp;&nbsp;<button v-on:click="borrar(index)">Borrar</button> &nbsp;&nbsp; <button v-on:click="incprioridad(index)">Subir prioridad</button> &nbsp; &nbsp; <button v-on:click="decprioridad(index)">Bajar prioridad</button>
+                        </div>
+                    </li>
+                </ul>
+                <p>Tienes {{ listatareas.length }} tareas, de las cuales {{ incompletos }} pendientes</p>
+                <button @click="borrarCompletadas">Borrar completadas</button> &nbsp;&nbsp; <button @click="mostrarCompletas">Mostrar completas</button> &nbsp;&nbsp;&nbsp; <button @click="mostrarIncompletas">Mostrar incompletas</button> &nbsp;&nbsp;&nbsp; <button @click="mostrarTodas">Mostrar todas</button>
+                
+            </div>
+            
+            
+        </div>
+    </center>
+    
+    
+</body>
+
+</html>
